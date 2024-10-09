@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+</head>
+<body>
+    <h1>Bem-vindo à Biblioteca</h1>
+    <h2>Livros disponíveis:</h2>
+    <ul>
+    {% for livro in livros %}
+        <li>{{ livro.titulo }} - {{ livro.autor.nome }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
