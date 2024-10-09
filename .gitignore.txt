@@ -16,3 +16,12 @@
       # IDEs
       .idea/
       .vscode/
+
+      #.pyc
+      .pycache/
+      .db.sqlite3
+
+      #.pyc
+      .pycache/
+      .db.sqlite3
+      .venv/

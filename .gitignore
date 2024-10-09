@@ -1,0 +1,23 @@
+ pycache/
+   *.py[cod]
+   *$py.class
+
+   # Django
+   *.log
+   *.pot
+   db.sqlite3
+   media/
+
+   # Environments
+   .env
+   .venv
+   env/
+   venv/
+   ENV/
+
+   # IDEs
+   .vscode/
+   .idea/
+
+   # Specific to your project
+   .gitignore.txt
