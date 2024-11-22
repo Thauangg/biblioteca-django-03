@@ -1,0 +1,70 @@
+/* Estilos gerais para o corpo da página */
+body {
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Cabeçalho */
+h1 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+/* Subtítulo */
+h2 {
+    color: #333;
+    text-align: center;
+    font-size: 1.8em;
+    margin-top: 20px;
+}
+
+/* Estilos para a lista de livros */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Adicionar uma imagem à esquerda do título do livro */
+li img {
+    width: 60px;
+    height: 90px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+/* Estilo para o título do livro */
+li h3 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #333;
+}
+
+/* Autor do livro */
+li span {
+    color: #555;
+    font-size: 1.1em;
+}
+
+/* Hover nos itens da lista */
+li:hover {
+    background-color: #f0f8ff;
+    cursor: pointer;
+}

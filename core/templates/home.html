@@ -1,17 +1,18 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Bem-vindo à Biblioteca</h1>
-    <h2>Livros disponíveis:</h2>
+    <h1>Livros</h1>
     <ul>
-    {% for livro in livros %}
-        <li>{{ livro.titulo }} - {{ livro.autor.nome }}</li>
-    {% endfor %}
+        {% for livro in livros %}
+            <li>{{ livro.titulo }} - {{ livro.autor.nome }}</li>
+        {% endfor %}
     </ul>
 </body>
 </html>

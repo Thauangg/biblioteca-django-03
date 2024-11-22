@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from .models import Livro, Autor, Categoria
 from django.utils import timezone
-from datetime import datetime  # Adicionado esta importação
 
 # Serializador para o modelo Categoria
 class CategoriaSerializer(serializers.ModelSerializer):
@@ -17,23 +16,25 @@ class AutorSerializer(serializers.ModelSerializer):
 
 # Serializador para o modelo Livro
 class LivroSerializer(serializers.ModelSerializer):
-    autor = serializers.PrimaryKeyRelatedField(queryset=Autor.objects.all())
-    categoria = serializers.PrimaryKeyRelatedField(queryset=Categoria.objects.all())
-    ano_publicacao = serializers.IntegerField(default=timezone.now().year)
-    publicado_em = serializers.DateField(default=timezone.now().date())  # Modificado esta linha
+    autor = AutorSerializer()  # Usando o serializador de Autor para retornar mais detalhes
+    categoria = CategoriaSerializer()  # Usando o serializador de Categoria
+    ano_publicacao = serializers.IntegerField(default=timezone.now().year)  # Valor padrão como o ano atual
+    publicado_em = serializers.DateField(default=timezone.now)  # Valor padrão como a data atual
 
     class Meta:
         model = Livro
         fields = ['id', 'titulo', 'autor', 'categoria', 'ano_publicacao', 'publicado_em', 'isbn']
 
     def create(self, validated_data):
-        if 'publicado_em' in validated_data:
-            if isinstance(validated_data['publicado_em'], datetime):
-                validated_data['publicado_em'] = validated_data['publicado_em'].date()
+        # O Django já cuida da conversão correta de campos do tipo DateField, então não há necessidade de verificar manualmente
         return super().create(validated_data)
 
 # Serializador para criar/atualizar livros (usando IDs de autor e categoria)
 class LivroCreateUpdateSerializer(serializers.ModelSerializer):
+    autor = serializers.PrimaryKeyRelatedField(queryset=Autor.objects.all())  # Usando o campo de ID
+    categoria = serializers.PrimaryKeyRelatedField(queryset=Categoria.objects.all())  # Usando o campo de ID
+    publicado_em = serializers.DateField(default=timezone.now)  # Usando timezone.now diretamente
+
     class Meta:
         model = Livro
         fields = ['id', 'titulo', 'autor', 'categoria', 'publicado_em']

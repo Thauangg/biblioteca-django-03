@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Livros</title>
+    <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <h1>Lista de Livros</h1>
     <ul>
-    {% for livro in livros %}
-        <li>{{ livro.titulo }} - {{ livro.autor }}</li>
-    {% endfor %}
+        {% for livro in livros %}
+            <li>
+                <!-- Adicionar a imagem de capa aqui também -->
+                <img src="{{ livro.imagem_url }}" alt="Capa do livro">
+                <div>
+                    <h3>{{ livro.titulo }}</h3>
+                    <span>{{ livro.autor.nome }}</span>
+                </div>
+            </li>
+        {% endfor %}
     </ul>
 </body>
 </html>
