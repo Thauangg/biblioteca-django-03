@@ -58,6 +58,6 @@ Acesse o projeto em `http://localhost:8000`
 O projeto inclui os seguintes apps Django:
 
 - `core`: Contém as funcionalidades principais do sistema de biblioteca.
-- `colecoes`: permite criar e gerenciar coleções de itens, como livros, autores ou categorias.
+- `colecoes`: permite criar e gerenciar coleções de  livros, autores ou categorias.
 
 
