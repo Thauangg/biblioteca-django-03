@@ -21,7 +21,7 @@ O Projeto Biblioteca é um sistema de gerenciamento para bibliotecas, desenvolvi
 
 1. Clone o repositório:
    ```
-   git clone https://github.com/Thauangg/biblioteca-django-v2.git
+   git clone https://github.com/Thauangg/biblioteca-django-03.git
    cd biblioteca
    ```
 
@@ -57,6 +57,6 @@ Acesse o projeto em `http://localhost:8000`
 O projeto inclui os seguintes apps Django:
 
 - `core`: Contém as funcionalidades principais do sistema de biblioteca.
-
+- `colecoes`: permite criar e gerenciar coleções de itens, como livros, autores ou categorias.
 
 
